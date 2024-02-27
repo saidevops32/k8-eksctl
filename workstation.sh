@@ -73,3 +73,11 @@ tar -xzf eksctl_$PLATFORM.tar.gz -C /tmp && rm eksctl_$PLATFORM.tar.gz
 sudo mv /tmp/eksctl /usr/local/bin
 
 VALIDATE $? "Eksctl installation"
+
+sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
+
+VALIDATE $? " installing kubens "
+
+sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+
+VALIDATE $? " installing kubens completed "
